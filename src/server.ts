@@ -3,10 +3,23 @@ import bodyParser from 'body-parser';
 import express from 'express';
 import logging from './config/logging';
 import config from './config/config';
-import sampleRoutes from './routes/sample';
+import productRoutes from './routes/product';
+import mongoose from 'mongoose';
 
 const NAMESPACE = 'Server';
 const router = express();
+
+// Connect to Mongo
+mongoose
+  .connect(config.mongo.url, config.mongo.options)
+  .then((result) => {
+    logging.info(NAMESPACE, 'Connected to mongoDB.');
+  })
+  .catch((error) => {
+    logging.error(NAMESPACE, error.message, error);
+  });
+
+
 
 // log request middleware
 router.use((req, res, next) => {
@@ -53,8 +66,8 @@ router.use((req, res, next) => {
 router.get('/', (req, res) => {
   res.send('hi');
 });
-router.use('/sample', sampleRoutes);
-// localhost:1337/sample/check
+router.use('/api/products', productRoutes);
+// localhost:1337/api/product/check
 
 // Error handling
 router.use((req, res, next) => {
