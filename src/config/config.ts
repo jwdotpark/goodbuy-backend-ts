@@ -12,9 +12,11 @@ const MONGO_OPTIONS = {
   retryWrites: false
 };
 
-const MONGO_USERNAME = process.env.MONGO_USERNAME || 'id';
+const MONGO_USERNAME = process.env.MONGO_USERNAME || 'user';
 const MONGO_PASSWORD = process.env.MONGO_PASSWORD || 'password';
-// const MONGO_HOST = process.env.MONGO_URL || 'MONGO_URI';
+const MONGO_HOST =
+  process.env.MONGO_URL ||
+  'mongodb%2Bsrv%3A%2F%2Fuser%3Apassword%40goodbuy.tepss.mongodb.net%2Fgoodbuy%3FretryWrites%3Dtrue%26w%3Dmajority';
 // https://stackoverflow.com/questions/61463771/mongoparseerror-unescaped-slash-in-userinfo-section
 
 const MONGO = {
