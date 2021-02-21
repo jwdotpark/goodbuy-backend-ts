@@ -1,5 +1,6 @@
 import mongoose, { Schema } from 'mongoose';
 import IProduct from '../interfaces/product';
+import logging from '../config/logging';
 
 const ProductSchema: Schema = new Schema(
   {
@@ -14,5 +15,9 @@ const ProductSchema: Schema = new Schema(
     timestamps: true
   }
 );
+
+ProductSchema.post<IProduct>('save', function () {
+  logging.info('Mongo', 'Checkout the product we just saved: ', this);
+});
 
 export default mongoose.model<IProduct>('Product', ProductSchema);

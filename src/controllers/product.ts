@@ -53,4 +53,4 @@ const createProduct = (req: Request, res: Response, next: NextFunction) => {
     });
 };
 
-export default { getAllProducts };
+export default { getAllProducts, createProduct };
