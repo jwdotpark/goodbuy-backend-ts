@@ -12,14 +12,19 @@ const router = express();
 // Connect to Mongo
 mongoose
   .connect(config.mongo.url, config.mongo.options)
+
+  // FIXME every env var should be defined within interface
+  // .connect(
+  //   'mongodb+srv://user:8rcV7TSq26d6xsm@cluster0.rtgin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
+  //   config.mongo.options
+  // )
+
   .then((result) => {
     logging.info(NAMESPACE, 'Connected to mongoDB.');
   })
   .catch((error) => {
     logging.error(NAMESPACE, error.message, error);
   });
-
-
 
 // log request middleware
 router.use((req, res, next) => {
