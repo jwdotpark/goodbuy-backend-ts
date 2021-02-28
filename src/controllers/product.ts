@@ -1,9 +1,9 @@
 import { Request, Response, NextFunction } from 'express';
-import logging from '../config/logging';
+// import logging from '../config/logging';
 import mongoose from 'mongoose';
 import Product from '../models/product';
 
-const NAMESPACE = 'Sample Controller';
+// const NAMESPACE = 'Sample Controller';
 
 const getAllProducts = (req: Request, res: Response, next?: NextFunction) => {
   // logging.info(NAMESPACE, `Sample health check route called.`);

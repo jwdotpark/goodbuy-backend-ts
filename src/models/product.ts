@@ -2,6 +2,7 @@ import mongoose, { Schema } from 'mongoose';
 import IProduct from '../interfaces/product';
 import logging from '../config/logging';
 
+// TODO refine Schema later
 const ProductSchema: Schema = new Schema(
   {
     name: { type: String, required: true, min: 2, max: 50 },
