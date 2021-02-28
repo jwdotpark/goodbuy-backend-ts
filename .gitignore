@@ -127,4 +127,6 @@ dist
 !.vscode/extensions.json
 *.code-workspace
 
+yarn.lock
+
 # End of https://www.toptal.com/developers/gitignore/api/node,vscode

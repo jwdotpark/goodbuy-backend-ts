@@ -1,8 +1,5 @@
 import dotenv from 'dotenv';
 
-// TODO currently .env isn't loaded
-// https://stackoverflow.com/questions/45194598/using-process-env-in-typescript
-
 dotenv.config();
 
 const MONGO_OPTIONS = {
@@ -27,7 +24,6 @@ const MONGO = {
   password: MONGO_PASSWORD,
   options: MONGO_OPTIONS,
   url: `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}${MONGO_HOST}`
-  // FIXME delete env var later
 };
 
 const SERVER_HOSTNAME = process.env.SERVER_HOSTNAME || 'localhost';
@@ -44,5 +40,4 @@ const config = {
 };
 
 // console.log(`mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}${MONGO_HOST}`);
-
 export default config;

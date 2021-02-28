@@ -2,10 +2,13 @@
 
 NodeJS, Express & Typescript with RESTful API
 
+# add local env
+
 # product crud
 
 - get all products: /api/products/get/products
-- add new product: /api/products/create/product 
+- add new product: /api/products/create/product
+
 ```
 {
     "name": "test",

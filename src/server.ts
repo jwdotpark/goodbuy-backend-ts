@@ -85,3 +85,5 @@ httpServer.listen(config.server.port, () =>
     `Server is running ${config.server.hostname}:${config.server.port}`
   )
 );
+
+// TODO add crud input validation
