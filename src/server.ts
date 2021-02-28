@@ -12,13 +12,6 @@ const router = express();
 // Connect to Mongo
 mongoose
   .connect(config.mongo.url, config.mongo.options)
-
-  // FIXME every env var should be defined within interface
-  // .connect(
-  //   'mongodb+srv://user:8rcV7TSq26d6xsm@cluster0.rtgin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
-  //   config.mongo.options
-  // )
-
   .then((result) => {
     logging.info(NAMESPACE, 'Connected to mongoDB.');
   })
@@ -36,7 +29,6 @@ router.use((req, res, next) => {
 
   // listener when anything is finished
   res.on('finish', () => {
-    // log res
     logging.info(
       NAMESPACE,
       `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`
@@ -72,7 +64,6 @@ router.get('/', (req, res) => {
   res.send('hi');
 });
 router.use('/api/products', productRoutes);
-// localhost:1337/api/product/check
 
 // Error handling
 router.use((req, res, next) => {
