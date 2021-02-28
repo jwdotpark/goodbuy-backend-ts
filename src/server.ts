@@ -34,9 +34,11 @@ router.use((req, res, next) => {
       `METHOD: [${req.method}] - URL: [${req.url}] - STATUS: [${res.statusCode}] - IP: [${req.socket.remoteAddress}]`
     );
   });
-
   next();
 });
+
+// (node: 8017) Warning: Accessing non - existent property 'MongoError' of module exports inside circular dependency
+//  mongodb@3.6.4 native driver bug
 
 // Parse the body of the request and allow sending json message api
 router.use(bodyParser.urlencoded({ extended: true }));
