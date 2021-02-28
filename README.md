@@ -2,7 +2,10 @@
 
 NodeJS, Express & Typescript with RESTful API
 
-#
+
+```
+npm i && start
+```
 
 - get all products: /api/products/get/products
 - add new product: /api/products/create/product
