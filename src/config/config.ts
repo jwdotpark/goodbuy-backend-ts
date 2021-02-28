@@ -16,8 +16,8 @@ const MONGO_OPTIONS = {
   retryWrites: false
 };
 
-const MONGO_USERNAME = process.env.MONGO_USERNAME || 'user';
-const MONGO_PASSWORD = process.env.MONGO_PASSWORD || '8rcV7TSq26d6xsm';
+const MONGO_USERNAME = process.env.MONGO_USERNAME;
+const MONGO_PASSWORD = process.env.MONGO_PASSWORD;
 const MONGO_HOST = process.env.MONGO_URL;
 // https://stackoverflow.com/questions/61463771/mongoparseerror-unescaped-slash-in-userinfo-section
 
@@ -26,9 +26,7 @@ const MONGO = {
   username: MONGO_USERNAME,
   password: MONGO_PASSWORD,
   options: MONGO_OPTIONS,
-  url:
-    'mongodb+srv://user:8rcV7TSq26d6xsm@cluster0.rtgin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
-  // url: `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@cluster0.rtgin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`
+  url: `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}${MONGO_HOST}`
   // FIXME delete env var later
 };
 
@@ -44,5 +42,7 @@ const config = {
   mongo: MONGO,
   server: SERVER
 };
+
+// console.log(`mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}${MONGO_HOST}`);
 
 export default config;
