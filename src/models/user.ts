@@ -9,7 +9,7 @@ const UserSchema: Schema = new Schema(
     email: { type: String, required: true, min: 2, max: 50 },
     password: { type: String, required: true, min: 2, max: 50 },
     role: { type: String, required: true, min: 2, max: 50 },
-    extraInformation: { type: String, required: true, min: 2, max: 50 }
+    // extraInformation: { type: String, required: true, min: 2, max: 50 }
   },
   {
     timestamps: true
@@ -21,4 +21,3 @@ UserSchema.post<IUser>('save', function () {
 });
 
 export default mongoose.model<IUser>('User', UserSchema);
-// <IUser> interface

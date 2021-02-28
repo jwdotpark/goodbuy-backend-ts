@@ -5,6 +5,6 @@ export default interface IUser extends Document {
   email: string;
   password: string;
   role: string;
-  extraInformation: string;
+  // extraInformation: string;
   // var modify document after passed into mongoose
 }

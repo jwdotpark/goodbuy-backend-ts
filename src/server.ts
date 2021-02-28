@@ -4,6 +4,7 @@ import express from 'express';
 import logging from './config/logging';
 import config from './config/config';
 import productRoutes from './routes/product';
+import userRoutes from './routes/user';
 import mongoose from 'mongoose';
 
 const NAMESPACE = 'Server';
@@ -66,6 +67,7 @@ router.get('/', (req, res) => {
   res.send('hi');
 });
 router.use('/api/products', productRoutes);
+router.use('/api/users', userRoutes);
 
 // Error handling
 router.use((req, res, next) => {

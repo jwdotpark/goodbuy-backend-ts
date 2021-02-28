@@ -2,9 +2,7 @@
 
 NodeJS, Express & Typescript with RESTful API
 
-# add local env
-
-# product crud
+#
 
 - get all products: /api/products/get/products
 - add new product: /api/products/create/product
@@ -16,5 +14,17 @@ NodeJS, Express & Typescript with RESTful API
     "corporation": "123 corp",
     "barcode": "12345",
     "state": "?_?"
+}
+```
+
+- get all users: /api/users/get/users
+- create new user: /api/users/create/user
+
+```
+{
+    "name": "okja",
+    "email": "okja@cutedog.com",
+    "password": "pswrd",
+    "role": "test_role"
 }
 ```
